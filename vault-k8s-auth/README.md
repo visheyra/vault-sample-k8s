@@ -2,9 +2,11 @@
 
 Vault store secret and kubernetes manage service accounts. So why not merge those features and enabling access to secrets using kubernetes service accounts:
 
-## Permissions w/ k8s
+## Permissions with k8s
 
 If configured, kubenernetes by default put a jwt token that is link to a particular serviceaccount in the `/var/run/secrets/kubernetes.io/serviceaccount/token`
+
+Check out this [page](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) for more informations.
 
 examples:
 
