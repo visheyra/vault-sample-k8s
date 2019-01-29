@@ -4,5 +4,5 @@ This repository compile a bunch of Hashicorp Vault's features that a can be nati
 
 ## Features
 
-- [x] Kubernetes backend for vault
+- [x] [Kubernetes backend for vault](vault-k8s-auth/README.md)
 - [ ] Certificate rotation 
