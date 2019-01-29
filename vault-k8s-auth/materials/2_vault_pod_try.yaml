@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: auth-demo
+  namespace: default
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: try
+  namespace: default
+spec:
+  serviceAccountName: auth-demo
+  containers:
+    - name: try
+      image: jsenon/toolingcontainer
+      command:
+        - sh
+        - -c
+        - "while true; do sleep 30; done"

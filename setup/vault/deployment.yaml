@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: vault
+  name: vault
+  namespace: vault
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: vault
+  template:
+    metadata:
+      labels:
+        run: vault
+    spec:
+      containers:
+      - image: vault
+        imagePullPolicy: Always
+        name: vault
+      terminationGracePeriodSeconds: 30
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: vault
+  name: vault
+  namespace: vault
+spec:
+  ports:
+  - port: 8200
+    protocol: TCP
+    targetPort: 8200
+  selector:
+    run: vault
+  type: ClusterIP
